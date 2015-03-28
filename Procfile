@@ -1,1 +1,1 @@
-web: flynn-go-sample
+web: flynn-go-sample $PORT

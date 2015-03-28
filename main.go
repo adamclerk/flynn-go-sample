@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,10 +14,11 @@ type Result struct {
 }
 
 func main() {
+	port := os.Args[1]
 	router := gin.Default()
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, Result{"OK", "HELLOWORLD!"})
 	})
 
-	router.Run(":8080")
+	router.Run(":" + port)
 }
